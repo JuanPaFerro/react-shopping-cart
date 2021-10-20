@@ -1,4 +1,6 @@
 import { Component } from "react";
+import Cart from "./Cart";
+import Logo from "./Logo";
 
 const styles = {
   navbar: {
@@ -15,10 +17,15 @@ const styles = {
 
 export default class Navbar extends Component {
   render() {
+    const { cart, isVisibleCart, toggleCartVisibility } = this.props;
     return (
       <nav style={styles.navbar}>
-        <p>Logo</p>
-        <p>Cart</p>
+        <Logo />
+        <Cart
+          cart={cart}
+          isVisibleCart={isVisibleCart}
+          toggleCartVisibility={toggleCartVisibility}
+        />
       </nav>
     );
   }
